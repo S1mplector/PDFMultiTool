@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image & PDF Converter</title>
+  <!-- Link to our CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app-container">
+    <h1>No Bullshit PDF Multitool</h1>
+    
+    <!-- Section to convert images to a PDF -->
+    <div class="converter-section">
+      <h2>Convert Images to a Single PDF</h2>
+      <input 
+        type="file" 
+        id="imageInput" 
+        multiple 
+        accept="image/*" 
+      />
+      <button id="convertImagesBtn">Convert Images to PDF</button>
+      
+      <!-- Progress bar for images -->
+      <progress id="imageProgress" value="0" max="100"></progress>
+      
+      <!-- Optional checkbox to let user choose a directory -->
+      <div class="checkbox-container">
+        <input type="checkbox" id="saveImagesToDirectory" />
+        <label for="saveImagesToDirectory">Save directly to a chosen folder (Chromium browsers only)</label>
+      </div>
+    </div>
+
+    <!-- Section to merge PDFs into one file -->
+    <div class="converter-section">
+      <h2>Merge Multiple PDFs</h2>
+      <input 
+        type="file" 
+        id="pdfInput" 
+        multiple 
+        accept="application/pdf" 
+      />
+      <button id="mergePdfBtn">Merge PDFs</button>
+      
+      <!-- Progress bar for merging PDFs -->
+      <progress id="mergeProgress" value="0" max="100"></progress>
+      
+      <!-- Optional checkbox to let user choose a directory -->
+      <div class="checkbox-container">
+        <input type="checkbox" id="saveMergedToDirectory" />
+        <label for="saveMergedToDirectory">Save directly to a chosen folder (Chromium browsers only)</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF-LIB -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Your main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
